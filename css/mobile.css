@@ -1,3 +1,65 @@
 /* ── Mobile Overrides ── */
 /* All rules here are scoped to @media (max-width: 768px) unless noted.  */
 /* Desktop layout (layout.css, components.css, etc.) is not modified.    */
+
+/* ── Bottom Navigation Bar ── */
+#bottom-nav {
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  #bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: var(--color-surface);
+    border-top: 2px solid var(--color-border);
+    z-index: 100;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
+  }
+
+  .bottom-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-height: 56px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+    padding: 0;
+  }
+
+  .bottom-tab.active {
+    color: var(--color-primary);
+  }
+
+  .bottom-tab-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .bottom-tab-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  /* Hide top nav links and stats — bottom nav replaces them */
+  .nav-links,
+  .nav-stats {
+    display: none;
+  }
+
+  /* Push content up so bottom nav doesn't overlap it */
+  #app {
+    padding-bottom: 56px;
+  }
+}
