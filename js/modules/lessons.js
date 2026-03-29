@@ -72,7 +72,7 @@ const Lessons = {
         <span class="example-hindi">${item.example.word}</span>
         <span> — ${item.example.meaning}</span>
       </div>
-      <button class="btn-pronounce" style="margin-top:8px;display:inline-block;padding:3px 10px;background:var(--color-primary-light);border-radius:6px;color:white;font-size:0.75rem;cursor:pointer;border:none;">▶ Pronounce</button>
+      <button class="btn-pronounce" style="margin-top:8px;display:inline-block;background:var(--color-primary-light);border-radius:6px;color:white;font-size:0.75rem;cursor:pointer;border:none;">▶ Pronounce</button>
     `;
 
     card.querySelector('.btn-pronounce').addEventListener('click', () => {
