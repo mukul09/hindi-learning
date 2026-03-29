@@ -63,3 +63,34 @@
     padding-bottom: 56px;
   }
 }
+
+/* ── Touch Targets (minimum 44px) ── */
+@media (max-width: 768px) {
+  /* Small buttons (Pronounce, Learn/Unlearn) */
+  .btn-sm {
+    min-height: 44px;
+    padding: 8px var(--space-md);
+  }
+
+  /* Pronounce button on flip cards */
+  .btn-pronounce {
+    min-height: 44px;
+    padding: 8px var(--space-md);
+  }
+
+  /* Vocab card action buttons */
+  .word-actions .btn {
+    min-height: 44px;
+  }
+
+  /* Quiz Check / Next buttons — full width for easy thumb tap */
+  .quiz-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quiz-nav .btn {
+    width: 100%;
+    min-height: 52px;
+  }
+}
