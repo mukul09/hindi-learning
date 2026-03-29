@@ -20,6 +20,11 @@ const APP = {
     const navLink = $(`.nav-links a[href="#${sectionId}"]`);
     if (navLink) navLink.classList.add('active');
 
+    // Sync bottom nav active state
+    $$('#bottom-nav .bottom-tab').forEach(btn => btn.classList.remove('active'));
+    const bottomTab = $(`#bottom-nav .bottom-tab[data-section="${sectionId}"]`);
+    if (bottomTab) bottomTab.classList.add('active');
+
     // Special rendering on navigate
     if (sectionId === 'progress') {
       Progress.renderDashboard();
