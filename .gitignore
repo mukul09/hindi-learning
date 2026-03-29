@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+tts_proxy.py
+generate_audio.py

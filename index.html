@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>हिंदी सीखें — Learn Hindi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/lessons.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <style>
+    /* Vocab word cards — inline since they share both vocab and component styles */
+    .word-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: var(--space-md);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      transition: all var(--transition-fast);
+    }
+    .word-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .word-card.learned {
+      border-color: var(--color-accent);
+      background: linear-gradient(135deg, #F1FFF3, #FFFFFF);
+    }
+    .word-hindi {
+      font-family: var(--font-devanagari);
+      font-size: 2rem;
+      color: var(--color-primary);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .word-roman {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+    .word-english {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+    }
+    .word-actions {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-sm);
+    }
+    .btn-learn.is-learned {
+      color: var(--color-secondary);
+    }
+    .word-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: var(--space-md);
+    }
+    .vocab-layout {
+      display: flex;
+      gap: var(--space-lg);
+      align-items: flex-start;
+    }
+    .vocab-sidebar {
+      flex: 0 0 160px;
+      position: sticky;
+      top: 80px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .vocab-sidebar::-webkit-scrollbar { width: 4px; }
+    .vocab-sidebar::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+    #vocab-tab-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 0;
+      border-bottom: none;
+      overflow-x: visible;
+    }
+    #vocab-tab-bar .tab-btn {
+      text-align: left;
+      width: 100%;
+      padding: 8px 12px;
+      border-radius: var(--radius-btn);
+      border-bottom: none;
+      bottom: 0;
+      font-size: 0.875rem;
+    }
+    #vocab-tab-bar .tab-btn.active {
+      background: var(--color-primary);
+      color: #fff;
+      border-bottom: none;
+    }
+    .vocab-main {
+      flex: 1;
+      min-width: 0;
+    }
+    .vocab-search-bar {
+      margin-bottom: 0;
+    }
+    .vocab-search-bar input {
+      width: 100%;
+      padding: var(--space-sm) var(--space-md);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-btn);
+      font-size: 0.875rem;
+      transition: border-color var(--transition-fast);
+      background: var(--color-surface);
+    }
+    .vocab-search-bar input:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+    @media (max-width: 600px) {
+      .vocab-layout { flex-direction: column; }
+      .vocab-sidebar { position: static; flex: none; max-height: none; flex-direction: row; flex-wrap: wrap; overflow: visible; }
+      #vocab-tab-bar { flex-direction: row; flex-wrap: wrap; }
+      #vocab-tab-bar .tab-btn { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav id="main-nav">
+    <div class="nav-brand">हिंदी Learn</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#lessons">Script</a></li>
+      <li><a href="#vocab">Vocabulary</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#progress">Progress</a></li>
+    </ul>
+    <div class="nav-stats">
+      <span>🔥 <span id="streak-count">0</span></span>
+      <span>⭐ <span id="xp-count">0</span> XP</span>
+    </div>
+  </nav>
+
+  <!-- ── App Sections ── -->
+  <main id="app">
+
+    <!-- ───────── HOME ───────── -->
+    <section id="home" class="app-section is-hidden">
+
+      <div class="home-hero">
+        <div class="hero-hindi">हिंदी सीखें</div>
+        <div class="hero-english">Learn to read, write and speak Hindi</div>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="APP.navigate('lessons')">Start Learning</button>
+          <button class="btn btn-secondary btn-lg" id="home-continue-btn">Continue</button>
+        </div>
+      </div>
+
+      <div class="feature-cards">
+        <div class="feature-card">
+          <span class="feature-icon">🔤</span>
+          <h3>Devanagari Script</h3>
+          <p>Learn the Hindi alphabet — vowels, consonants, and vowel signs (matras) — with interactive flip cards.</p>
+          <button class="btn btn-primary" onclick="APP.navigate('lessons')">Start Script Lessons</button>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📚</span>
+          <h3>Vocabulary</h3>
+          <p>Build your word bank across 7 categories. Hear native pronunciation with one click.</p>
+          <button class="btn btn-primary" onclick="APP.navigate('vocab')">Explore Words</button>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🎯</span>
+          <h3>Quizzes</h3>
+          <p>Test yourself with multiple choice, matching, and fill-in-the-blank exercises. Earn XP!</p>
+          <button class="btn btn-primary" onclick="APP.navigate('quiz')">Take a Quiz</button>
+        </div>
+      </div>
+
+      <div class="progress-strip" id="home-progress-strip" style="display:none">
+        <div class="progress-strip-item">
+          <span class="label">XP:</span>
+          <span class="value" id="home-xp">0</span>
+        </div>
+        <div class="progress-strip-item">
+          <span class="label">Streak:</span>
+          <span class="value" id="home-streak">0 days</span>
+        </div>
+        <div class="progress-strip-item">
+          <span class="label">Progress:</span>
+          <span class="value" id="home-lessons">0 lessons</span>
+        </div>
+        <button class="btn btn-ghost btn-sm" onclick="APP.navigate('progress')">View Details →</button>
+      </div>
+
+    </section>
+
+    <!-- ───────── LESSONS ───────── -->
+    <section id="lessons" class="app-section is-hidden">
+
+      <div class="section-header">
+        <h2><span style="font-family:var(--font-devanagari);color:var(--color-primary)">लिपि</span> — The Script</h2>
+        <p>Learn to read and write Devanagari, the script used to write Hindi.</p>
+      </div>
+
+      <!-- Lesson Tabs -->
+      <div class="tab-bar">
+        <button class="lesson-tab-btn tab-btn active" data-panel="vowels">🅰️ Vowels (स्वर)</button>
+        <button class="lesson-tab-btn tab-btn" data-panel="consonants">🔤 Consonants (व्यंजन)</button>
+        <button class="lesson-tab-btn tab-btn" data-panel="matras">✍️ Matras (मात्राएँ)</button>
+      </div>
+
+      <!-- Vowels Panel -->
+      <div id="lesson-vowels" class="lesson-panel active">
+        <div class="lesson-header">
+          <h2><span class="devanagari-title">स्वर</span> — Vowels</h2>
+          <p>Hindi has 12 vowels. Click a card to flip it and see the pronunciation and example. Use the Pronounce button to hear the sound.</p>
+        </div>
+        <div id="vowel-grid" class="card-grid"></div>
+        <div class="lesson-complete-bar" id="complete-bar-vowels"></div>
+      </div>
+
+      <!-- Consonants Panel -->
+      <div id="lesson-consonants" class="lesson-panel">
+        <div class="lesson-header">
+          <h2><span class="devanagari-title">व्यंजन</span> — Consonants</h2>
+          <p>Hindi consonants are organized by where in the mouth the sound is made. Flip each card to see transliteration and examples.</p>
+        </div>
+        <div id="consonant-groups"></div>
+        <div class="lesson-complete-bar" id="complete-bar-consonants"></div>
+      </div>
+
+      <!-- Matras Panel -->
+      <div id="lesson-matras" class="lesson-panel">
+        <div class="lesson-header">
+          <h2><span class="devanagari-title">मात्राएँ</span> — Vowel Signs</h2>
+          <p>When a vowel follows a consonant, it's written as a matra (symbol) attached to the consonant, not as a standalone letter.</p>
+        </div>
+        <div class="matra-explainer">
+          <h3>How Matras Work</h3>
+          <div class="demo">
+            <div class="demo-item">
+              <span class="demo-hindi">क</span>
+              <span class="demo-label">consonant (ka)</span>
+            </div>
+            <span class="demo-op">+</span>
+            <div class="demo-item">
+              <span class="demo-hindi">ा</span>
+              <span class="demo-label">aa matra</span>
+            </div>
+            <span class="demo-op">=</span>
+            <div class="demo-item">
+              <span class="demo-hindi" style="color:var(--color-primary)">का</span>
+              <span class="demo-label">kaa</span>
+            </div>
+          </div>
+        </div>
+        <div id="matra-grid" class="card-grid"></div>
+        <div class="lesson-complete-bar" id="complete-bar-matras"></div>
+      </div>
+
+    </section>
+
+    <!-- ───────── VOCABULARY ───────── -->
+    <section id="vocab" class="app-section is-hidden">
+
+      <div class="section-header">
+        <h2><span style="font-family:var(--font-devanagari);color:var(--color-primary)">शब्द</span> — Vocabulary</h2>
+        <p>Learn Hindi words by category. Click 🔊 to hear pronunciation. Click ☆ to mark a word as learned.</p>
+      </div>
+
+      <div class="vocab-layout">
+        <aside class="vocab-sidebar">
+          <div class="vocab-search-bar">
+            <input type="search" id="vocab-search" placeholder="Search…" autocomplete="off">
+          </div>
+          <div id="vocab-tab-bar"></div>
+        </aside>
+        <div class="vocab-main">
+          <div id="word-grid" class="word-grid"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ───────── QUIZ ───────── -->
+    <section id="quiz" class="app-section is-hidden">
+
+      <!-- Selection Screen -->
+      <div id="quiz-selection">
+        <div class="section-header">
+          <h2><span style="font-family:var(--font-devanagari);color:var(--color-primary)">अभ्यास</span> — Practice</h2>
+          <p>Choose a quiz to test your knowledge and earn XP.</p>
+        </div>
+        <div id="quiz-selection-grid" class="quiz-selection-grid"></div>
+      </div>
+
+      <!-- Active Quiz -->
+      <div id="quiz-active" class="is-hidden">
+        <div class="quiz-top-bar">
+          <button class="btn btn-ghost btn-sm" onclick="Quiz.confirmQuit()" title="Quit quiz">✕</button>
+          <div class="quiz-progress-bar">
+            <div class="bar-fill" id="quiz-progress-fill" style="width:0%"></div>
+          </div>
+          <span class="quiz-counter" id="quiz-counter">1 / 10</span>
+          <span class="quiz-score-badge" id="quiz-score-badge">Score: 0/0</span>
+        </div>
+
+        <div id="question-container" class="question-container"></div>
+
+        <div class="quiz-nav">
+          <button class="btn btn-primary" id="quiz-check-btn">Check</button>
+          <button class="btn btn-primary is-hidden" id="quiz-next-btn" onclick="Quiz.nextQuestion()">Next →</button>
+        </div>
+      </div>
+
+      <!-- Summary Screen -->
+      <div id="quiz-summary" class="is-hidden"></div>
+
+    </section>
+
+    <!-- ───────── PROGRESS ───────── -->
+    <section id="progress" class="app-section is-hidden">
+      <!-- Rendered dynamically by Progress.renderDashboard() -->
+    </section>
+
+  </main>
+
+  <!-- Toast container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Modal overlay -->
+  <div id="modal-overlay" class="is-hidden">
+    <div id="modal-box"></div>
+  </div>
+
+  <!-- ── Scripts: load order matters ── -->
+  <!-- 1. Utilities -->
+  <script src="js/utils/storage.js"></script>
+  <script src="js/utils/dom.js"></script>
+
+  <!-- 2. Data -->
+  <script src="js/data/script.js"></script>
+  <script src="js/data/vocabulary.js"></script>
+  <script src="js/data/quizzes.js"></script>
+
+  <!-- 3. Modules -->
+  <script src="js/modules/audio.js"></script>
+  <script src="js/modules/progress.js"></script>
+  <script src="js/modules/lessons.js"></script>
+  <script src="js/modules/vocabulary.js"></script>
+  <script src="js/modules/quiz.js"></script>
+
+  <!-- 4. App bootstrap -->
+  <script src="js/app.js"></script>
+
+  <script>
+    // Quit quiz confirmation
+    Quiz.confirmQuit = function() {
+      if (confirm('Quit this quiz? Your progress will be lost.')) {
+        hide($('#quiz-active'));
+        show($('#quiz-selection'));
+        hide($('#quiz-summary'));
+        Quiz.state = null;
+      }
+    };
+  </script>
+
+</body>
+</html>

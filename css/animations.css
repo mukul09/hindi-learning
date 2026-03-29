@@ -1,0 +1,462 @@
+/* ── Keyframes ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-6px); }
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes xpFloat {
+  0%   { opacity: 1; transform: translateY(0) scale(1); }
+  50%  { opacity: 1; transform: translateY(-30px) scale(1.2); }
+  100% { opacity: 0; transform: translateY(-60px) scale(0.8); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX(8px); }
+  60%       { transform: translateX(-5px); }
+  80%       { transform: translateX(5px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  30%       { transform: scale(1.3); }
+  60%       { transform: scale(0.9); }
+}
+
+@keyframes streakFire {
+  0%, 100% { transform: scale(1) rotate(-5deg); }
+  50%       { transform: scale(1.2) rotate(5deg); }
+}
+
+@keyframes confetti {
+  0%   { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(60px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes badgePop {
+  0%   { transform: scale(0) rotate(-20deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes levelUp {
+  0%   { transform: scale(0.5); opacity: 0; }
+  70%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes correctPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4); }
+  70%  { box-shadow: 0 0 0 12px rgba(76, 175, 80, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Applied Animation Classes ── */
+.animate-fade-in {
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+.animate-bounce {
+  animation: bounce 0.5s ease;
+}
+
+.animate-shake {
+  animation: shake 0.4s ease;
+}
+
+.animate-badge-pop {
+  animation: badgePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-level-up {
+  animation: levelUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-correct-pulse {
+  animation: correctPulse 0.6s ease;
+}
+
+/* ── Streak Icon Animation ── */
+.streak-fire {
+  display: inline-block;
+  animation: streakFire 1.5s ease-in-out infinite;
+}
+
+/* ── Progress Section ── */
+#progress {
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+.progress-hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-radius: var(--radius-card);
+  color: white;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.level-badge-large {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.level-badge-large .level-num {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.level-badge-large .level-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.level-xp-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.level-xp-info .xp-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: var(--space-xs);
+}
+
+.xp-bar-white {
+  height: 10px;
+  background: rgba(255,255,255,0.3);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: var(--space-xs);
+}
+
+.xp-bar-white .bar-fill {
+  height: 100%;
+  background: white;
+  border-radius: var(--radius-pill);
+  transition: width var(--transition-slow);
+}
+
+.level-xp-info .xp-numbers {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.streak-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.streak-hero .streak-num {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.streak-hero .streak-label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* ── Badges Section ── */
+.badges-section {
+  margin-bottom: var(--space-xl);
+}
+
+.badges-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-md);
+}
+
+.badge-item {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.badge-item.earned {
+  border-color: var(--color-secondary);
+  background: linear-gradient(135deg, #FFF8E1, #FFFDE7);
+}
+
+.badge-item.locked {
+  opacity: 0.4;
+  filter: grayscale(1);
+}
+
+.badge-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.badge-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ── Lesson Map ── */
+.lesson-map {
+  margin-bottom: var(--space-xl);
+}
+
+.lesson-map h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.lesson-nodes {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.lesson-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.node-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border: 3px solid var(--color-border);
+  background: var(--color-surface);
+  transition: all var(--transition-fast);
+}
+
+.lesson-node.complete .node-circle {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.lesson-node.active .node-circle {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(255,107,53,0.2);
+}
+
+.node-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 70px;
+}
+
+/* ── Quiz History Table ── */
+.quiz-history-section {
+  margin-bottom: var(--space-xl);
+}
+
+.quiz-history-section h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.history-table th {
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 2px solid var(--color-border);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.history-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.history-table tr:last-child td {
+  border-bottom: none;
+}
+
+.score-pct {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.score-pct.low {
+  color: var(--color-danger);
+}
+
+/* ── Home Section ── */
+#home {
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+.home-hero {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.home-hero .hero-hindi {
+  font-family: var(--font-devanagari);
+  font-size: 4rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+}
+
+.home-hero .hero-english {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.home-hero .hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.feature-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.feature-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.feature-card .feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.progress-strip {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-md) var(--space-lg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.progress-strip-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.9rem;
+}
+
+.progress-strip-item .label {
+  color: var(--color-text-muted);
+}
+
+.progress-strip-item .value {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+@media (max-width: 600px) {
+  .progress-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-hero .hero-hindi {
+    font-size: 3rem;
+  }
+
+  .summary-actions {
+    flex-direction: column;
+  }
+}

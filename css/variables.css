@@ -1,0 +1,51 @@
+:root {
+  /* Colors */
+  --color-primary:       #FF6B35;
+  --color-primary-dark:  #E84A00;
+  --color-primary-light: #FF8F65;
+  --color-secondary:     #FFB347;
+  --color-accent:        #4CAF50;
+  --color-danger:        #E53935;
+  --color-warning:       #FFC107;
+
+  --color-bg:            #FFF8F0;
+  --color-surface:       #FFFFFF;
+  --color-surface-alt:   #FFF0E0;
+  --color-border:        #E8D5C0;
+
+  --color-text:          #2D2D2D;
+  --color-text-muted:    #757575;
+  --color-text-on-primary: #FFFFFF;
+
+  /* Fonts */
+  --font-devanagari: 'Noto Sans Devanagari', 'Mangal', serif;
+  --font-ui:         'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Border radius */
+  --radius-sm:   6px;
+  --radius-card: 12px;
+  --radius-btn:  8px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 6px 20px rgba(255, 107, 53, 0.2);
+  --shadow-btn:  0 2px 6px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* Nav height */
+  --nav-height: 60px;
+}

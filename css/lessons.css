@@ -1,0 +1,296 @@
+/* ── Lesson Tabs Content ── */
+.lesson-panel {
+  display: none;
+}
+
+.lesson-panel.active {
+  display: block;
+}
+
+.lesson-header {
+  margin-bottom: var(--space-xl);
+}
+
+.lesson-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.lesson-header h2 .devanagari-title {
+  font-family: var(--font-devanagari);
+  color: var(--color-primary);
+}
+
+.lesson-header p {
+  color: var(--color-text-muted);
+  max-width: 600px;
+}
+
+/* ── Letter Card Grid ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Flip Card ── */
+.letter-card {
+  height: 180px;
+  perspective: 800px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform var(--transition-slow);
+}
+
+.letter-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.card-front {
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+}
+
+.card-devanagari {
+  font-family: var(--font-devanagari);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--color-primary);
+  font-weight: 400;
+}
+
+.card-ipa {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.card-transliteration {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+}
+
+.card-example {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.card-example .example-word {
+  font-family: var(--font-devanagari);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.card-example .example-meaning {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.btn-pronounce {
+  margin-top: var(--space-xs);
+  padding: 3px var(--space-sm);
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: var(--radius-btn);
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.btn-pronounce:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+/* ── Consonant Groups ── */
+.consonant-group {
+  margin-bottom: var(--space-xl);
+}
+
+.group-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ── Matra Cards ── */
+.matra-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.matra-anatomy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-devanagari);
+  font-size: 1.8rem;
+}
+
+.matra-operator {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.matra-combined {
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.matra-transliteration {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.matra-example {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.matra-example .example-hindi {
+  font-family: var(--font-devanagari);
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+/* ── Lesson Complete Button ── */
+.lesson-complete-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  margin-top: var(--space-lg);
+}
+
+.lesson-complete-bar p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.lesson-complete-bar.completed {
+  background: #E8F5E9;
+  border-color: var(--color-accent);
+}
+
+.lesson-complete-bar.completed p {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ── Matra Explainer ── */
+.matra-explainer {
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-card);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  border: 1px solid var(--color-border);
+}
+
+.matra-explainer h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+.matra-explainer .demo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.matra-explainer .demo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.matra-explainer .demo-hindi {
+  font-family: var(--font-devanagari);
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.matra-explainer .demo-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.matra-explainer .demo-op {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .letter-card {
+    height: 160px;
+  }
+
+  .card-devanagari {
+    font-size: 2.8rem;
+  }
+}
