@@ -94,3 +94,18 @@
     min-height: 52px;
   }
 }
+
+/* ── Quiz Input & Multiple Choice ── */
+@media (max-width: 768px) {
+  /* Fill-in-the-blank: remove fixed width that overflows narrow screens */
+  .fill-blank-input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Multiple choice: taller options for comfortable tapping */
+  .mc-option {
+    min-height: 56px;
+    padding: var(--space-md);
+  }
+}
