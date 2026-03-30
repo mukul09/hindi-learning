@@ -560,5 +560,32 @@ const WORDS = [
   { id: 'atta',     hindi: 'आटा',     romanized: 'aata',     english: 'Wheat flour',          category: 'cooking', difficulty: 1 },
   { id: 'ghee',     hindi: 'घी',      romanized: 'ghee',     english: 'Clarified butter',     category: 'cooking', difficulty: 1 },
   { id: 'bartan',   hindi: 'बर्तन',   romanized: 'bartan',   english: 'Utensil / Vessel',     category: 'cooking', difficulty: 2 },
-  { id: 'chulha',   hindi: 'चूल्हा',  romanized: 'chulha',   english: 'Stove / Hearth',       category: 'cooking', difficulty: 2 }
+  { id: 'chulha',   hindi: 'चूल्हा',  romanized: 'chulha',   english: 'Stove / Hearth',       category: 'cooking', difficulty: 2 },
+
+  // Classroom Phrases
+  { id: 'samajhnahin',  hindi: 'समझ नहीं आया', romanized: 'samajh nahin aaya', english: "I don't understand",    category: 'classroom', difficulty: 1 },
+  { id: 'dobara',       hindi: 'दोबारा',        romanized: 'dobaara',           english: 'Again / Repeat',        category: 'classroom', difficulty: 1 },
+  { id: 'sawaal2',      hindi: 'सवाल',          romanized: 'sawaal',            english: 'Question',              category: 'classroom', difficulty: 1 },
+  { id: 'jawaab2',      hindi: 'जवाब',          romanized: 'jawaab',            english: 'Answer',                category: 'classroom', difficulty: 1 },
+  { id: 'shikshak2',    hindi: 'शिक्षक',        romanized: 'shikshak',          english: 'Teacher (m)',           category: 'classroom', difficulty: 1 },
+  { id: 'adhyaapika',   hindi: 'अध्यापिका',     romanized: 'adhyaapika',        english: 'Teacher (f)',           category: 'classroom', difficulty: 2 },
+  { id: 'vidyaarthi',   hindi: 'विद्यार्थी',    romanized: 'vidyaarthi',        english: 'Student',               category: 'classroom', difficulty: 2 },
+  { id: 'kaksha2',      hindi: 'कक्षा',         romanized: 'kaksha',            english: 'Classroom',             category: 'classroom', difficulty: 2 },
+  { id: 'grihkaarya',   hindi: 'गृहकार्य',      romanized: 'grihkaarya',        english: 'Homework',              category: 'classroom', difficulty: 2 },
+  { id: 'kitaab2',      hindi: 'किताब',         romanized: 'kitaab',            english: 'Book',                  category: 'classroom', difficulty: 1 },
+  { id: 'kalam2',       hindi: 'कलम',           romanized: 'kalam',             english: 'Pen',                   category: 'classroom', difficulty: 1 },
+  { id: 'pencil2',      hindi: 'पेंसिल',        romanized: 'pencil',            english: 'Pencil',                category: 'classroom', difficulty: 1 },
+  { id: 'shyaampat',    hindi: 'श्यामपट',       romanized: 'shyaampat',         english: 'Blackboard',            category: 'classroom', difficulty: 2 },
+  { id: 'pariksha',     hindi: 'परीक्षा',       romanized: 'pareeksha',         english: 'Exam',                  category: 'classroom', difficulty: 2 },
+  { id: 'nambar',       hindi: 'नंबर',          romanized: 'nambar',            english: 'Marks / Score',         category: 'classroom', difficulty: 1 },
+  { id: 'seekhna',      hindi: 'सीखना',         romanized: 'seekhna',           english: 'To learn',              category: 'classroom', difficulty: 1 },
+  { id: 'yaadkarna',    hindi: 'याद करना',      romanized: 'yaad karna',        english: 'To memorize',           category: 'classroom', difficulty: 2 },
+  { id: 'dhyan',        hindi: 'ध्यान',         romanized: 'dhyaan',            english: 'Attention',             category: 'classroom', difficulty: 1 },
+  { id: 'theekhai',     hindi: 'ठीक है',        romanized: 'theek hai',         english: 'OK / Alright',          category: 'classroom', difficulty: 1 },
+  { id: 'shukriya',     hindi: 'शुक्रिया',      romanized: 'shukriya',          english: 'Thank you (informal)',   category: 'classroom', difficulty: 1 },
+  { id: 'mujhepatanahi', hindi: 'मुझे पता नहीं', romanized: 'mujhe pata nahin',  english: "I don't know",          category: 'classroom', difficulty: 1 },
+  { id: 'bataiye',      hindi: 'बताइए',         romanized: 'bataiye',           english: 'Please tell me',        category: 'classroom', difficulty: 2 },
+  { id: 'dheere',       hindi: 'धीरे',          romanized: 'dheere',            english: 'Slowly',                category: 'classroom', difficulty: 1 },
+  { id: 'boliye',       hindi: 'बोलिए',         romanized: 'boliye',            english: 'Please say / Speak',    category: 'classroom', difficulty: 2 },
+  { id: 'likhiye',      hindi: 'लिखिए',         romanized: 'likhiye',           english: 'Please write',          category: 'classroom', difficulty: 2 }
 ];
