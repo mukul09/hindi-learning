@@ -533,5 +533,32 @@ const WORDS = [
   { id: 'band',      hindi: 'बंद',         romanized: 'band',         english: 'Closed',               category: 'shopping', difficulty: 1 },
   { id: 'kataar',    hindi: 'कतार',        romanized: 'kataar',       english: 'Queue / Line',         category: 'shopping', difficulty: 2 },
   { id: 'tolna',     hindi: 'तौलना',       romanized: 'taulna',       english: 'To weigh',             category: 'shopping', difficulty: 2 },
-  { id: 'badalna',   hindi: 'बदलना',       romanized: 'badalna',      english: 'To exchange',          category: 'shopping', difficulty: 2 }
+  { id: 'badalna',   hindi: 'बदलना',       romanized: 'badalna',      english: 'To exchange',          category: 'shopping', difficulty: 2 },
+
+  // Cooking & Kitchen
+  { id: 'tel',      hindi: 'तेल',     romanized: 'tel',      english: 'Oil',                  category: 'cooking', difficulty: 1 },
+  { id: 'masala',   hindi: 'मसाला',   romanized: 'masaala',  english: 'Spice / Spice mix',    category: 'cooking', difficulty: 1 },
+  { id: 'chaaku',   hindi: 'चाकू',    romanized: 'chaaku',   english: 'Knife',                category: 'cooking', difficulty: 1 },
+  { id: 'kadhai',   hindi: 'कड़ाही',  romanized: 'kadhaai',  english: 'Wok / Deep pan',       category: 'cooking', difficulty: 2 },
+  { id: 'tava',     hindi: 'तवा',     romanized: 'tawa',     english: 'Flat griddle',         category: 'cooking', difficulty: 1 },
+  { id: 'ubalna',   hindi: 'उबालना',  romanized: 'ubalna',   english: 'To boil',              category: 'cooking', difficulty: 1 },
+  { id: 'talna',    hindi: 'तलना',    romanized: 'talna',    english: 'To fry',               category: 'cooking', difficulty: 1 },
+  { id: 'bhoonna',  hindi: 'भूनना',   romanized: 'bhunna',   english: 'To roast / sauté',    category: 'cooking', difficulty: 2 },
+  { id: 'pakana',   hindi: 'पकाना',   romanized: 'pakaana',  english: 'To cook',              category: 'cooking', difficulty: 1 },
+  { id: 'kaccha',   hindi: 'कच्चा',   romanized: 'kachhaa',  english: 'Raw / Unripe',         category: 'cooking', difficulty: 1 },
+  { id: 'pakka',    hindi: 'पक्का',   romanized: 'pakka',    english: 'Cooked through',       category: 'cooking', difficulty: 1 },
+  { id: 'meetha',   hindi: 'मीठा',    romanized: 'meetha',   english: 'Sweet',                category: 'cooking', difficulty: 1 },
+  { id: 'teekha',   hindi: 'तीखा',    romanized: 'teekha',   english: 'Spicy / Pungent',      category: 'cooking', difficulty: 1 },
+  { id: 'khatta',   hindi: 'खट्टा',   romanized: 'khattaa',  english: 'Sour',                 category: 'cooking', difficulty: 1 },
+  { id: 'namkeen',  hindi: 'नमकीन',   romanized: 'namkeen',  english: 'Salty / Savory',       category: 'cooking', difficulty: 2 },
+  { id: 'pyaaz2',   hindi: 'प्याज़',  romanized: 'pyaaz',    english: 'Onion',                category: 'cooking', difficulty: 1 },
+  { id: 'lahsun2',  hindi: 'लहसुन',   romanized: 'lahsun',   english: 'Garlic',               category: 'cooking', difficulty: 1 },
+  { id: 'adrak2',   hindi: 'अदरक',    romanized: 'adrak',    english: 'Ginger',               category: 'cooking', difficulty: 1 },
+  { id: 'haldi',    hindi: 'हल्दी',   romanized: 'haldi',    english: 'Turmeric',             category: 'cooking', difficulty: 1 },
+  { id: 'jeera',    hindi: 'जीरा',    romanized: 'jeera',    english: 'Cumin',                category: 'cooking', difficulty: 2 },
+  { id: 'dhania',   hindi: 'धनिया',   romanized: 'dhaniya',  english: 'Coriander',            category: 'cooking', difficulty: 2 },
+  { id: 'atta',     hindi: 'आटा',     romanized: 'aata',     english: 'Wheat flour',          category: 'cooking', difficulty: 1 },
+  { id: 'ghee',     hindi: 'घी',      romanized: 'ghee',     english: 'Clarified butter',     category: 'cooking', difficulty: 1 },
+  { id: 'bartan',   hindi: 'बर्तन',   romanized: 'bartan',   english: 'Utensil / Vessel',     category: 'cooking', difficulty: 2 },
+  { id: 'chulha',   hindi: 'चूल्हा',  romanized: 'chulha',   english: 'Stove / Hearth',       category: 'cooking', difficulty: 2 }
 ];
