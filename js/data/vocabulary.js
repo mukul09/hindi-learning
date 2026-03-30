@@ -3,7 +3,8 @@ const VOCAB_CATEGORIES = [
   'animals', 'verbs', 'adjectives', 'phrases',
   'weather', 'clothes', 'transport', 'house', 'school', 'jobs',
   'health', 'nature', 'sports', 'emotions', 'places', 'days',
-  'vegetables', 'fruits', 'sentences'
+  'vegetables', 'fruits', 'sentences',
+  'festivals', 'shopping', 'cooking', 'classroom'
 ];
 
 const WORDS = [
