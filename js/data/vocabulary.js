@@ -479,5 +479,32 @@ const WORDS = [
   { id: 'sn47', hindi: 'अभी कितने बजे हैं?',            romanized: 'abhi kitne baje hain?',             english: 'What time is it now?',             category: 'sentences', difficulty: 1 },
   { id: 'sn48', hindi: 'मुझे जल्दी जाना है',            romanized: 'mujhe jaldi jaana hai',             english: 'I have to go quickly',             category: 'sentences', difficulty: 2 },
   { id: 'sn49', hindi: 'यह बहुत महँगा है',              romanized: 'yeh bahut mahanga hai',             english: 'This is very expensive',           category: 'sentences', difficulty: 1 },
-  { id: 'sn50', hindi: 'कुछ सस्ता दिखाइए',              romanized: 'kuch sasta dikhaiye',               english: 'Show me something cheaper',        category: 'sentences', difficulty: 2 }
+  { id: 'sn50', hindi: 'कुछ सस्ता दिखाइए',              romanized: 'kuch sasta dikhaiye',               english: 'Show me something cheaper',        category: 'sentences', difficulty: 2 },
+
+  // Festivals & Religion
+  { id: 'diwali',       hindi: 'दिवाली',         romanized: 'diwaali',          english: 'Diwali',                   category: 'festivals', difficulty: 1 },
+  { id: 'holi',         hindi: 'होली',            romanized: 'holi',             english: 'Holi',                     category: 'festivals', difficulty: 1 },
+  { id: 'eid',          hindi: 'ईद',              romanized: 'eid',              english: 'Eid',                      category: 'festivals', difficulty: 1 },
+  { id: 'dussehra',     hindi: 'दशहरा',           romanized: 'dussehra',         english: 'Dussehra',                 category: 'festivals', difficulty: 2 },
+  { id: 'navratri',     hindi: 'नवरात्रि',        romanized: 'navraatri',        english: 'Navratri',                 category: 'festivals', difficulty: 2 },
+  { id: 'mandir',       hindi: 'मंदिर',           romanized: 'mandir',           english: 'Temple',                   category: 'festivals', difficulty: 1 },
+  { id: 'masjid',       hindi: 'मस्जिद',          romanized: 'masjid',           english: 'Mosque',                   category: 'festivals', difficulty: 1 },
+  { id: 'puja',         hindi: 'पूजा',            romanized: 'puja',             english: 'Worship / Prayer',         category: 'festivals', difficulty: 1 },
+  { id: 'prasad',       hindi: 'प्रसाद',          romanized: 'prasaad',          english: 'Sacred food offering',     category: 'festivals', difficulty: 2 },
+  { id: 'diya',         hindi: 'दीया',            romanized: 'diya',             english: 'Oil lamp',                 category: 'festivals', difficulty: 1 },
+  { id: 'patakha',      hindi: 'पटाखा',           romanized: 'pataakha',         english: 'Firecracker',              category: 'festivals', difficulty: 2 },
+  { id: 'rangoli',      hindi: 'रंगोली',          romanized: 'rangoli',          english: 'Rangoli',                  category: 'festivals', difficulty: 2 },
+  { id: 'gulal',        hindi: 'गुलाल',           romanized: 'gulaal',           english: 'Colored powder (Holi)',    category: 'festivals', difficulty: 2 },
+  { id: 'upvaas',       hindi: 'उपवास',           romanized: 'upvaas',           english: 'Fast / Fasting',           category: 'festivals', difficulty: 2 },
+  { id: 'vardaan',      hindi: 'वरदान',           romanized: 'vardaan',          english: 'Blessing',                 category: 'festivals', difficulty: 2 },
+  { id: 'bhagwan',      hindi: 'भगवान',           romanized: 'bhagwaan',         english: 'God',                      category: 'festivals', difficulty: 1 },
+  { id: 'thaali',       hindi: 'थाली',            romanized: 'thaali',           english: 'Ritual plate',             category: 'festivals', difficulty: 1 },
+  { id: 'aarti',        hindi: 'आरती',            romanized: 'aarti',            english: 'Devotional ritual',        category: 'festivals', difficulty: 2 },
+  { id: 'tyohaar',      hindi: 'त्योहार',         romanized: 'tyohaar',          english: 'Festival',                 category: 'festivals', difficulty: 1 },
+  { id: 'mela',         hindi: 'मेला',            romanized: 'mela',             english: 'Fair / Festival',          category: 'festivals', difficulty: 1 },
+  { id: 'mithaibox',    hindi: 'मिठाई का डब्बा', romanized: 'mithaai ka dabba', english: 'Box of sweets',            category: 'festivals', difficulty: 2 },
+  { id: 'uphar',        hindi: 'उपहार',           romanized: 'uphaar',           english: 'Gift',                     category: 'festivals', difficulty: 1 },
+  { id: 'khushi',       hindi: 'खुशी',            romanized: 'khushi',           english: 'Happiness / Joy',          category: 'festivals', difficulty: 1 },
+  { id: 'shubhkaamna',  hindi: 'शुभकामना',        romanized: 'shubhkaamna',      english: 'Best wishes',              category: 'festivals', difficulty: 2 },
+  { id: 'parv',         hindi: 'पर्व',            romanized: 'parv',             english: 'Occasion / Festival',      category: 'festivals', difficulty: 2 }
 ];
