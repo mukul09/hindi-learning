@@ -506,5 +506,32 @@ const WORDS = [
   { id: 'uphar',        hindi: 'उपहार',           romanized: 'uphaar',           english: 'Gift',                     category: 'festivals', difficulty: 1 },
   { id: 'khushi',       hindi: 'खुशी',            romanized: 'khushi',           english: 'Happiness / Joy',          category: 'festivals', difficulty: 1 },
   { id: 'shubhkaamna',  hindi: 'शुभकामना',        romanized: 'shubhkaamna',      english: 'Best wishes',              category: 'festivals', difficulty: 2 },
-  { id: 'parv',         hindi: 'पर्व',            romanized: 'parv',             english: 'Occasion / Festival',      category: 'festivals', difficulty: 2 }
+  { id: 'parv',         hindi: 'पर्व',            romanized: 'parv',             english: 'Occasion / Festival',      category: 'festivals', difficulty: 2 },
+
+  // Shopping & Money
+  { id: 'rupaya',    hindi: 'रुपया',       romanized: 'rupaya',       english: 'Rupee',                category: 'shopping', difficulty: 1 },
+  { id: 'daam',      hindi: 'दाम',         romanized: 'daam',         english: 'Price',                category: 'shopping', difficulty: 1 },
+  { id: 'sasta',     hindi: 'सस्ता',       romanized: 'sasta',        english: 'Cheap',                category: 'shopping', difficulty: 1 },
+  { id: 'mahanga',   hindi: 'महँगा',       romanized: 'mahangaa',     english: 'Expensive',            category: 'shopping', difficulty: 1 },
+  { id: 'bazaar2',   hindi: 'बाज़ार',      romanized: 'baazaar',      english: 'Market',               category: 'shopping', difficulty: 1 },
+  { id: 'dukaan2',   hindi: 'दुकान',       romanized: 'dukaan',       english: 'Shop / Store',         category: 'shopping', difficulty: 1 },
+  { id: 'kharidna',  hindi: 'खरीदना',      romanized: 'kharidna',     english: 'To buy',               category: 'shopping', difficulty: 1 },
+  { id: 'bechna',    hindi: 'बेचना',       romanized: 'bechna',       english: 'To sell',              category: 'shopping', difficulty: 1 },
+  { id: 'paisa',     hindi: 'पैसा',        romanized: 'paisa',        english: 'Money / Coins',        category: 'shopping', difficulty: 1 },
+  { id: 'bill',      hindi: 'बिल',         romanized: 'bil',          english: 'Bill / Receipt',       category: 'shopping', difficulty: 1 },
+  { id: 'chhoot',    hindi: 'छूट',         romanized: 'chhoot',       english: 'Discount',             category: 'shopping', difficulty: 2 },
+  { id: 'maal',      hindi: 'माल',         romanized: 'maal',         english: 'Goods / Products',     category: 'shopping', difficulty: 2 },
+  { id: 'tol',       hindi: 'तोल',         romanized: 'tol',          english: 'Weight',               category: 'shopping', difficulty: 2 },
+  { id: 'naap',      hindi: 'नाप',         romanized: 'naap',         english: 'Size / Measurement',   category: 'shopping', difficulty: 2 },
+  { id: 'rangpasand',hindi: 'रंग पसंद है', romanized: 'rang pasand hai', english: 'I like the color', category: 'shopping', difficulty: 2 },
+  { id: 'kitna',     hindi: 'कितना',       romanized: 'kitna',        english: 'How much',             category: 'shopping', difficulty: 1 },
+  { id: 'zyada',     hindi: 'ज़्यादा',     romanized: 'zyaada',       english: 'Too much / More',      category: 'shopping', difficulty: 1 },
+  { id: 'thoda',     hindi: 'थोड़ा',       romanized: 'thoda',        english: 'A little / Less',      category: 'shopping', difficulty: 1 },
+  { id: 'lenahai',   hindi: 'लेना है',     romanized: 'lena hai',     english: 'I want to buy',        category: 'shopping', difficulty: 1 },
+  { id: 'wapas',     hindi: 'वापस',        romanized: 'waapas',       english: 'Return / Back',        category: 'shopping', difficulty: 1 },
+  { id: 'khula',     hindi: 'खुला',        romanized: 'khula',        english: 'Open (store)',         category: 'shopping', difficulty: 1 },
+  { id: 'band',      hindi: 'बंद',         romanized: 'band',         english: 'Closed',               category: 'shopping', difficulty: 1 },
+  { id: 'kataar',    hindi: 'कतार',        romanized: 'kataar',       english: 'Queue / Line',         category: 'shopping', difficulty: 2 },
+  { id: 'tolna',     hindi: 'तौलना',       romanized: 'taulna',       english: 'To weigh',             category: 'shopping', difficulty: 2 },
+  { id: 'badalna',   hindi: 'बदलना',       romanized: 'badalna',      english: 'To exchange',          category: 'shopping', difficulty: 2 }
 ];
